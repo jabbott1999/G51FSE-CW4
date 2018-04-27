@@ -31,8 +31,9 @@ public class CompanyEmail {
         return subjectLine;
     }
     
+    // BUG FIX: Was returning emailMessage() function instead of emailMessage variable.
     public String emailMessage() {
-        return emailMessage();
+        return emailMessage;
     }
     
     public void setFrom(String fromAddr) {
@@ -44,6 +45,9 @@ public class CompanyEmail {
     public void setTo(String toAddr) {
         if (toAddr.contains("@")) {
             toAddress = toAddr;
+        }
+        else {
+        	toAddress = null;
         }
     }
     
